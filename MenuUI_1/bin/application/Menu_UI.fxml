@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<!-- Connect the Controller to the View -->
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.Controller">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Pane fx:id="pane" layoutX="0.0" layoutY="0.0" prefHeight="768.0" prefWidth="1366.0">
+      <children>
+        <Button fx:id="scanButton" layoutX="726.0" layoutY="384.0" minHeight="31.0" mnemonicParsing="false" onAction="#onScanClick" prefHeight="31.0" prefWidth="85.0" text="Scan">
+          <font>
+            <Font size="16.0" fx:id="x1" />
+          </font>
+        </Button>
+        <Button font="$x1" layoutX="726.0" layoutY="220.0" minHeight="31.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="85.0" text="⚠ View" />
+        <Label layoutX="726.0" layoutY="172.0" prefWidth="273.0" text="⚠ # Need Decisions">
+          <font>
+            <Font size="28.0" />
+          </font>
+        </Label>
+        <ImageView fx:id="imageView" fitHeight="688.0" fitWidth="515.0" layoutX="91.0" layoutY="33.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../../../../../TestMenuImages(jpeg)/0001.jpg" />
+          </image>
+        </ImageView>
+        <ProgressBar fx:id="progressBar" layoutX="724.0" layoutY="104.0" prefHeight="31.0" prefWidth="385.9999000000025" progress="0.0" />
+        <Button layoutX="532.0" layoutY="725.0" mnemonicParsing="false" prefWidth="74.0" text="Next" />
+        <Button layoutX="91.0" layoutY="725.0" mnemonicParsing="false" prefWidth="74.0" text="Back" />
+        <MenuBar layoutX="0.0" layoutY="1.0" minHeight="20.9609375" prefHeight="25.0" prefWidth="1366.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="File">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Save" />
+                <MenuItem mnemonicParsing="false" text="Save As" />
+                <MenuItem mnemonicParsing="false" onAction="#onImportTemplateClick" text="Import Template Menu" fx:id="templateItemImport" />
+                <MenuItem mnemonicParsing="false" onAction="#onImportClick" text="Import Menus" fx:id="menuItemImport" />
+                <MenuItem mnemonicParsing="false" text="Export Menus" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Manual Edit" />
+                <MenuItem mnemonicParsing="false" text="Default to A" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem mnemonicParsing="false" text="About" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="" />
+          </menus>
+        </MenuBar>
+        <TableView layoutX="1143.0" layoutY="26.0" prefHeight="728.0" prefWidth="216.0">
+          <columns>
+            <TableColumn maxWidth="400.0" minWidth="50.0" prefWidth="100.0" text="Day" />
+            <TableColumn maxWidth="120.0" minWidth="20.0" prefWidth="100.0" text="Choice" />
+          </columns>
+        </TableView>
+        <Separator layoutX="710.0" layoutY="37.0" orientation="VERTICAL" prefHeight="703.0" />
+        <Text fx:id="txtNumCompleted" layoutX="726.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X of XXX Completed (00%)" />
+        <Text fx:id="txtFolderLocation" layoutX="726.0" layoutY="674.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Import Folder:" underline="true" wrappingWidth="400.0" />
+        <Text id="txtFolderLocation" layoutX="726.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Export Folder:" underline="true" wrappingWidth="400.0" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>

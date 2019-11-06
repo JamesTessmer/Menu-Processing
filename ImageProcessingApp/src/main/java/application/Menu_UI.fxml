@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<!-- Connect the Controller to the View -->
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.Controller">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Pane fx:id="pane" layoutX="0.0" layoutY="0.0" prefHeight="900.0" prefWidth="1440.0">
+      <children>
+        <Button fx:id="scanButton" layoutX="726.0" layoutY="384.0" minHeight="31.0" mnemonicParsing="false" onAction="#onScanClick" prefHeight="31.0" prefWidth="85.0" text="Start">
+          <font>
+            <Font size="16.0" fx:id="x1" />
+          </font>
+        </Button>
+        <Button fx:id="btnViewAtn" font="$x1" layoutX="726.0" layoutY="220.0" minHeight="31.0" mnemonicParsing="false" onAction="#onViewClick" prefHeight="31.0" prefWidth="85.0" text="⚠ View" />
+        <Label fx:id="lblNeedDecisions" layoutX="726.0" layoutY="172.0" prefWidth="273.0" text="⚠ # Need Decisions">
+          <font>
+            <Font size="28.0" />
+          </font>
+        </Label>
+        <ImageView fx:id="imageView" fitHeight="824.0" fitWidth="589.0" layoutX="54.0" layoutY="33.0" pickOnBounds="true" preserveRatio="false">
+          <image>
+            <Image url="@../../../../../TestMenuImages(jpeg)/0001.jpg" />
+          </image>
+        </ImageView>
+        <ProgressBar id="progressBar" fx:id="pb" layoutX="724.0" layoutY="104.0" prefHeight="31.0" prefWidth="385.9999000000025" progress="0.0" />
+        <Button fx:id="nextButton" layoutX="569.0" layoutY="865.0" mnemonicParsing="false" onAction="#onNextClick" prefWidth="74.0" text="Next" />
+        <Button fx:id="backButton" layoutX="54.0" layoutY="865.0" mnemonicParsing="false" onAction="#onBackClick" prefWidth="74.0" text="Back" />
+        <MenuBar layoutX="0.0" layoutY="1.0" minHeight="20.9609375" prefHeight="25.0" prefWidth="1440.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="File">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onImportTemplateClick" text="Import Template Menu" fx:id="templateItemImport" />
+                <MenuItem mnemonicParsing="false" onAction="#onImportClick" text="Import Menus" fx:id="menuItemImport" />
+                <MenuItem mnemonicParsing="false" onAction="#onExportCSV" text="Export Menus" fx:id="exportCSV" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+        <TableView fx:id="tableView" editable="true" layoutX="1253.0" layoutY="26.0" prefHeight="874.0" prefWidth="187.0" tableMenuButtonVisible="false">
+          <columns>
+            <TableColumn prefWidth="75.0" text="DAY" fx:id="colDay" />
+            <TableColumn onEditCommit="#onEditClick" prefWidth="75.0" text="CHOICE" fx:id="colChoice" />
+          </columns>
+        </TableView>
+        <Separator layoutX="710.0" layoutY="37.0" orientation="VERTICAL" prefHeight="849.0" />
+        <Text fx:id="txtNumCompleted" layoutX="726.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X of XXX Completed (00%)" />
+        <Text fx:id="txtFolderLocation" layoutX="726.0" layoutY="674.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Import Folder:" underline="true" wrappingWidth="400.0" />
+        <Text id="txtFolderLocation" layoutX="726.0" layoutY="708.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Export Folder:" underline="true" wrappingWidth="400.0" />
+        <Label id="lblNeedDecisions" fx:id="lblClientID" layoutX="724.0" layoutY="68.0" prefWidth="402.0" text="Client ID:">
+          <font>
+            <Font size="20.0" />
+          </font>
+        </Label>
+        <Button fx:id="btnCommitEdit" font="$x1" layoutX="726.0" layoutY="267.0" minHeight="31.0" mnemonicParsing="false" onAction="#onCommitClick" prefHeight="31.0" prefWidth="116.689453125" text="Commit Edit" />
+      </children>
+    </Pane>
+  </children>
+</AnchorPane>
